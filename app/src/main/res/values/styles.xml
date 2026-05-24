@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base app theme -->
+    <style name="Theme.NutriSee" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#0D7A45</item>
+        <item name="colorPrimaryVariant">#1C8D57</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">#DDF5E7</item>
+        <item name="colorOnSecondary">#0D7A45</item>
+        <item name="android:windowBackground">#F3F5F4</item>
+        <item name="android:statusBarColor">#0D7A45</item>
+        <item name="android:navigationBarColor">#0D7A45</item>
+    </style>
+
+    <!-- Dialog dengan background transparan supaya card putih rounded keliatan -->
+    <style name="RoundedDialog" parent="Theme.MaterialComponents.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowElevation">24dp</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+
+</resources>
