@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Checked: lingkaran hijau dengan centang putih -->
+    <item android:state_checked="true">
+        <layer-list>
+            <item>
+                <shape android:shape="oval">
+                    <solid android:color="#FFFFFF" />
+                    <size android:width="22dp" android:height="22dp" />
+                </shape>
+            </item>
+            <item
+                android:drawable="@android:drawable/checkbox_on_background"
+                android:gravity="center" />
+        </layer-list>
+    </item>
+
+    <!-- Unchecked: lingkaran outline putih kosong -->
+    <item android:state_checked="false">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/transparent" />
+            <stroke android:width="2dp" android:color="#FFFFFF" />
+            <size android:width="22dp" android:height="22dp" />
+        </shape>
+    </item>
+
+</selector>

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7F0EC">
+
+    <!-- ===================== HEADER (HANYA HIJAU SAMPE NUTRIDIARY) ===================== -->
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0D7A45"
+        android:orientation="vertical"
+        android:paddingTop="44dp"
+        android:paddingBottom="14dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <!-- Row: back + judul + menu -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/bg_back_btn"
+                android:src="@drawable/ic_arrow_back"
+                android:padding="6dp"
+                android:contentDescription="Kembali" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Nutri Diary"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btnMenu"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_more_vert"
+                android:tint="#FFFFFF"
+                android:contentDescription="Menu" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- ===================== SCROLL CONTENT ===================== -->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:clipToPadding="false"
+        android:paddingBottom="32dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp">
+
+            <!-- ===== WEEK DATE PICKER ===== -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvWeekDates"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:clipToPadding="false"
+                android:paddingStart="2dp"
+                android:paddingEnd="2dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal" />
+
+            <!-- ===== SUMMARY KALORI CARD ===== -->
+
+            <LinearLayout
+                android:id="@+id/cardTotalKalori"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_white_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Kalori"
+                    android:textColor="#5F5F5F"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtNetKalori"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="#1A1A1A"
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="6dp"
+                        android:text="kcal"
+                        android:textColor="#9E9E9E"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="#F0F0F0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:background="@drawable/bg_icon_food"
+                            android:src="@drawable/ic_food"
+                            android:padding="5dp"
+                            android:contentDescription="food icon" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Dikonsumsi"
+                                android:textColor="#9E9E9E"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/txtKaloriDikonsumsi"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#1A1A1A"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:background="@drawable/bg_icon_activity"
+                            android:src="@drawable/ic_flame"
+                            android:padding="5dp"
+                            android:contentDescription="flame icon" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Dibakar"
+                                android:textColor="#9E9E9E"
+                                android:textSize="11sp" />
+
+                            <TextView
+                                android:id="@+id/txtKaloriDibakar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#1A1A1A"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ===== SECTION HEADER: MAKAN & AKTIVITAS ===== -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Makan &amp; Aktivitas"
+                    android:textColor="#1A1A1A"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/chipFilterHariIni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:gravity="center"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:text="Hari ini"
+                    android:textColor="#0D7A45"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <!-- ===== LOADING STATE ===== -->
+
+            <ProgressBar
+                android:id="@+id/pbDiaryLoading"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:indeterminateTint="#0D7A45"
+                android:visibility="gone" />
+
+            <!-- ===== EMPTY STATE ===== -->
+
+            <LinearLayout
+                android:id="@+id/layoutDiaryEmpty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="32dp"
+                android:paddingBottom="16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🍽️"
+                    android:textSize="48sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Belum ada catatan hari ini\nTambah makanan dengan tombol +"
+                    android:textColor="#9E9E9E"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <!-- ===== RECYCLER VIEW: GABUNGAN MAKANAN + AKTIVITAS ===== -->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDiary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

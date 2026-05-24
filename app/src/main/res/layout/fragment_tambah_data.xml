@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ===== LAYER 1: BACKGROUND SELURUH HALAMAN ===== -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_tambah_makanan_pattern"
+        android:scaleType="centerCrop"
+        android:contentDescription="background" />
+
+    <!-- ===== LAYER 2: BACKGROUND HEADER ===== -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/green_header"
+            android:scaleType="centerCrop"
+            android:contentDescription="header" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="48dp"
+            android:text="Tambah Makanan"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+
+    <!-- ===== LAYER 3: MAIN CONTENT ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- HEADER SPACER -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="130dp" />
+
+        <!-- ===== SCROLL ===== -->
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingBottom="90dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="12dp">
+
+                <!-- CARD FORM -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_white_card"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nama Makanan"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/etNamaMakanan"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="Cari makanan..."
+                        android:imeOptions="actionSearch"
+                        android:inputType="text"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:textColor="#1A1A1A"
+                        android:textColorHint="#BDBDBD"
+                        android:textSize="14sp" />
+
+                    <ProgressBar
+                        android:id="@+id/pbSearch"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="6dp"
+                        android:indeterminateTint="#0D7A45"
+                        android:visibility="gone" />
+
+                    <ListView
+                        android:id="@+id/lvSearchResults"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:divider="#F0F0F0"
+                        android:dividerHeight="1dp"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="14dp"
+                        android:background="#F0F0F0" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kategori"
+                        android:textColor="#1A1A1A"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:baselineAligned="false"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+
+                        <TextView
+                            android:id="@+id/chipSarapan"
+                            android:layout_width="0dp"
+                            android:layout_height="34dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_chip_unselected"
+                            android:gravity="center"
+                            android:text="Sarapan"
+                            android:textColor="#0D7A45"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/chipMakanSiang"
+                            android:layout_width="0dp"
+                            android:layout_height="34dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_chip_selected"
+                            android:gravity="center"
+                            android:text="Makan Siang"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/chipMakanMalam"
+                            android:layout_width="0dp"
+                            android:layout_height="34dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_chip_unselected"
+                            android:gravity="center"
+                            android:text="Makan Malam"
+                            android:textColor="#0D7A45"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp">
+
+                        <TextView
+                            android:id="@+id/chipCamilan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="34dp"
+                            android:background="@drawable/bg_chip_unselected"
+                            android:gravity="center"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:text="Camilan"
+                            android:textColor="#0D7A45"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginBottom="14dp"
+                        android:background="#F0F0F0" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_info_card"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="12dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Porsi"
+                                android:textColor="#5F5F5F"
+                                android:textSize="12sp" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/txtPorsiCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1"
+                                    android:textColor="#0D7A45"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="4dp"
+                                    android:text="Porsi"
+                                    android:textColor="#5F5F5F"
+                                    android:textSize="13sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/btnMinus"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_circle_outline"
+                            android:src="@drawable/ic_minus"
+                            android:tint="#0D7A45" />
+
+                        <ImageButton
+                            android:id="@+id/btnPlus"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/bg_circle_filled"
+                            android:src="@drawable/ic_add"
+                            android:tint="#FFFFFF" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- KALORI ESTIMASI -->
+                <LinearLayout
+                    android:id="@+id/cardKalori"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_green_card"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kalori Estimasi"
+                        android:textColor="#DDF5E7"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtKalori"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="#FFFFFF"
+                            android:textSize="38sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginTop="6dp"
+                            android:text="kcal"
+                            android:textColor="#DDF5E7"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtKaloriLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔥 Sumber Energi Tinggi"
+                        android:textColor="#DDF5E7"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <!-- KARBO + PROTEIN -->
+                <LinearLayout
+                    android:id="@+id/cardNutrisi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_white_card"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Karbohidrat"
+                            android:textColor="#1A1A1A"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtKarbo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#0D7A45"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginTop="4dp"
+                                android:text="g"
+                                android:textColor="#5F5F5F"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/pbKarbo"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:layout_marginTop="6dp"
+                            android:max="100"
+                            android:progress="0"
+                            android:progressTint="#0D7A45" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_white_card"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Protein"
+                            android:textColor="#1A1A1A"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtProtein"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#0D7A45"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginTop="4dp"
+                                android:text="g"
+                                android:textColor="#5F5F5F"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/pbProtein"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:layout_marginTop="6dp"
+                            android:max="100"
+                            android:progress="0"
+                            android:progressTint="#0D7A45" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- LEMAK + SERAT -->
+                <LinearLayout
+                    android:id="@+id/cardNutrisi2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_white_card"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lemak"
+                            android:textColor="#1A1A1A"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtLemak"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#0D7A45"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginTop="4dp"
+                                android:text="g"
+                                android:textColor="#5F5F5F"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/pbLemak"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:layout_marginTop="6dp"
+                            android:max="100"
+                            android:progress="0"
+                            android:progressTint="#0D7A45" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_white_card"
+                        android:orientation="vertical"
+                        android:padding="14dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Serat"
+                            android:textColor="#1A1A1A"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/txtSerat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#0D7A45"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:layout_marginTop="4dp"
+                                android:text="g"
+                                android:textColor="#5F5F5F"
+                                android:textSize="13sp" />
+
+                        </LinearLayout>
+
+                        <ProgressBar
+                            android:id="@+id/pbSerat"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:layout_marginTop="6dp"
+                            android:max="100"
+                            android:progress="0"
+                            android:progressTint="#0D7A45" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- TOMBOL TAMBAH -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/btnTambahData"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:minWidth="160dp"
+                        android:background="@drawable/bg_btn_green_rounded"
+                        android:gravity="center"
+                        android:paddingStart="40dp"
+                        android:paddingEnd="40dp"
+                        android:text="Tambah"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+    <!-- ===== BOTTOM APP BAR — PERSIS SAMA KAYAK HOME ===== -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_gravity="bottom"
+        android:backgroundTint="#0D7A45"
+        app:fabCradleMargin="16dp"
+        app:fabCradleRoundedCornerRadius="28dp"
+        app:fabCradleVerticalOffset="16dp"
+        app:hideOnScroll="false"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:id="@+id/navBeranda"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingEnd="52dp"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:id="@+id/navBerandaIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_home"
+                    android:tint="#FFFFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/navProfil"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingStart="52dp"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:id="@+id/navProfilIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_profile"
+                    android:tint="#FFFFFF" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <!-- ===== FAB — PERSIS SAMA KAYAK HOME ===== -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"
+        app:tint="@null"
+        app:backgroundTint="#0D7A45"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        app:maxImageSize="32dp"
+        app:layout_anchor="@id/bottomAppBar" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

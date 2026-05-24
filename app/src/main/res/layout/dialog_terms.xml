@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_dialog_rounded"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="24dp">
+
+        <!-- Header -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Terms &amp; Condition"
+                android:textColor="#1A6B3F"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/btnClose"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="end|center_vertical"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="Tutup"
+                android:padding="4dp" />
+
+        </FrameLayout>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E0E0E0"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Konten scrollable -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:overScrollMode="never"
+            android:fadeScrollbars="false">
+
+            <TextView
+                android:id="@+id/tvTermsContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:lineSpacingMultiplier="1.6"
+                android:text='Syarat dan Ketentuan Penggunaan NutriSee\n\nTerakhir diperbarui: Mei 2026\n\nDengan mendaftar dan menggunakan aplikasi NutriSee, kamu menyetujui syarat dan ketentuan berikut. Harap baca dengan seksama sebelum melanjutkan.\n\n1. Penerimaan Syarat\n\nDengan mengakses atau menggunakan aplikasi NutriSee, kamu menyatakan bahwa kamu telah membaca, memahami, dan menyetujui untuk terikat oleh syarat dan ketentuan ini. Jika kamu tidak menyetujui syarat ini, harap jangan gunakan aplikasi kami.\n\n2. Penggunaan Aplikasi\n\nNutriSee dirancang untuk membantu kamu memantau dan meningkatkan kesehatan melalui informasi nutrisi. Kamu setuju untuk:\n\n• Menggunakan aplikasi hanya untuk tujuan yang sah dan sesuai dengan syarat ini.\n• Tidak menyalahgunakan, merusak, atau mencoba mengakses data pengguna lain.\n• Memberikan informasi yang akurat saat mendaftar dan menggunakan aplikasi.\n• Tidak menggunakan aplikasi untuk tujuan komersial tanpa izin tertulis dari kami.\n\n3. Akun Pengguna\n\nKamu bertanggung jawab penuh atas keamanan akun dan kata sandi kamu. NutriSee tidak bertanggung jawab atas kerugian yang timbul akibat akses tidak sah ke akun kamu. Segera hubungi kami jika kamu mencurigai adanya penggunaan akun yang tidak sah.\n\n4. Data dan Privasi\n\nKami menghargai privasi kamu. Data yang kamu masukkan ke dalam aplikasi disimpan secara lokal di perangkat kamu dan tidak dikirimkan ke server eksternal tanpa persetujuan kamu. Untuk informasi lebih lanjut, silakan baca Kebijakan Privasi kami.\n\n5. Informasi Kesehatan\n\nInformasi nutrisi dan kesehatan yang disediakan oleh NutriSee bersifat informatif dan edukatif. Aplikasi ini bukan pengganti saran medis profesional. Selalu konsultasikan kondisi kesehatan kamu dengan tenaga medis yang berkualifikasi sebelum membuat keputusan kesehatan yang signifikan.\n\n6. Batasan Tanggung Jawab\n\nNutriSee tidak bertanggung jawab atas:\n\n• Kerugian langsung atau tidak langsung akibat penggunaan aplikasi.\n• Ketidakakuratan informasi nutrisi yang bersumber dari database pihak ketiga.\n• Gangguan layanan akibat pemeliharaan atau masalah teknis.\n• Kehilangan data akibat kerusakan perangkat atau penghapusan aplikasi.\n\n7. Kekayaan Intelektual\n\nSeluruh konten dalam aplikasi NutriSee, termasuk desain, logo, teks, dan grafis, adalah milik NutriSee dan dilindungi oleh hukum hak cipta yang berlaku. Kamu tidak diperkenankan menyalin, mendistribusikan, atau memodifikasi konten tersebut tanpa izin tertulis.\n\n8. Perubahan Syarat\n\nKami berhak untuk mengubah syarat dan ketentuan ini sewaktu-waktu. Perubahan akan diberitahukan melalui aplikasi. Penggunaan berkelanjutan setelah perubahan dianggap sebagai penerimaan syarat yang diperbarui.\n\n9. Hukum yang Berlaku\n\nSyarat dan ketentuan ini diatur oleh hukum Republik Indonesia. Segala sengketa yang timbul akan diselesaikan melalui musyawarah mufakat, dan jika tidak tercapai, melalui pengadilan yang berwenang di Indonesia.\n\n10. Hubungi Kami\n\nJika kamu memiliki pertanyaan mengenai syarat dan ketentuan ini, silakan hubungi kami melalui:\n\nEmail: support@nutrisee.id\nInstagram: @nutrisee.id\n\nDengan menekan tombol "Daftar", kamu menyatakan telah membaca dan menyetujui seluruh syarat dan ketentuan di atas.' />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</FrameLayout>

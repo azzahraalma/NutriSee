@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7F0EC">
+
+    <!-- MAIN CONTENT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="72dp"
+            android:fillViewport="true"
+            android:clipToPadding="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp"
+                android:paddingBottom="32dp">
+
+                <!-- HELLO + DIARY ICON ROW -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hello,"
+                            android:textColor="#0D7A45"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Arya Permana"
+                            android:textColor="#0D7A45"
+                            android:textSize="34sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/btnDiary"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_history"
+                        android:tint="#0D7A45"
+                        android:background="@drawable/bg_info_card"
+                        android:padding="10dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </LinearLayout>
+
+                <!-- USER INFO -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="74dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_info_card"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Umur"
+                            android:textColor="#5F5F5F"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:id="@+id/txtAge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="19th"
+                            android:textColor="#0D7A45"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="74dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_info_card"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tinggi"
+                            android:textColor="#5F5F5F"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:id="@+id/txtHeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="170cm"
+                            android:textColor="#0D7A45"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="74dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_info_card"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Berat"
+                            android:textColor="#5F5F5F"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:id="@+id/txtWeight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="110kg"
+                            android:textColor="#0D7A45"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="74dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_info_card"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Target"
+                            android:textColor="#5F5F5F"
+                            android:textSize="12sp" />
+                        <TextView
+                            android:id="@+id/txtTarget"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="80kg"
+                            android:textColor="#0D7A45"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- CALORIES CARD -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/bg_green_card"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:background="@drawable/bg_calorie_header"
+                        android:gravity="center_vertical"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Target Kalori:"
+                            android:textColor="#DDF5E7"
+                            android:textSize="14sp" />
+                        <TextView
+                            android:id="@+id/txtCalories"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:text="1360 cal"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:weightSum="3">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🍎"
+                                android:textSize="18sp" />
+                            <TextView
+                                android:id="@+id/txtConsumed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#FFFFFF"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Dimakan"
+                                android:textColor="#D7ECDD"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:layout_width="150dp"
+                            android:layout_height="120dp">
+                            <ProgressBar
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_gravity="center"
+                                android:max="100"
+                                android:progress="100"
+                                android:progressDrawable="@drawable/bg_calorie_arc"
+                                android:rotation="180"
+                                style="?android:attr/progressBarStyleHorizontal" />
+                            <ProgressBar
+                                android:id="@+id/calorieProgress"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_gravity="center"
+                                android:max="100"
+                                android:progress="0"
+                                android:progressDrawable="@drawable/progress_calorie_arc"
+                                android:rotation="180"
+                                style="?android:attr/progressBarStyleHorizontal" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:id="@+id/txtCurrentCalories"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0"
+                                    android:textColor="#FFFFFF"
+                                    android:textSize="34sp"
+                                    android:textStyle="bold" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Kalori"
+                                    android:textColor="#D7ECDD"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+                        </FrameLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🔥"
+                                android:textSize="18sp" />
+                            <TextView
+                                android:id="@+id/txtBurned"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#FFFFFF"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Terbakar"
+                                android:textColor="#D7ECDD"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- NUTRITION BARS -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="84dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_nutrition_card">
+                        <View
+                            android:id="@+id/carbsProgress"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_nutrition_progress" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Karbo"
+                                android:textColor="#FFFFFF"
+                                android:textSize="13sp" />
+                            <TextView
+                                android:id="@+id/txtCarbs"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0/0g"
+                                android:textColor="#FFFFFF"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="84dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_nutrition_card">
+                        <View
+                            android:id="@+id/proteinProgress"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_nutrition_progress" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Protein"
+                                android:textColor="#FFFFFF"
+                                android:textSize="13sp" />
+                            <TextView
+                                android:id="@+id/txtProtein"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0/0g"
+                                android:textColor="#FFFFFF"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="84dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_nutrition_card">
+                        <View
+                            android:id="@+id/fatProgress"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_nutrition_progress" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Lemak"
+                                android:textColor="#FFFFFF"
+                                android:textSize="13sp" />
+                            <TextView
+                                android:id="@+id/txtFat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0/0g"
+                                android:textColor="#FFFFFF"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <!-- BMI -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_white_card"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="BMI Kamu"
+                            android:textColor="#0D7A45"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/txtBmi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="#0D7A45"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/txtBmiStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/bg_bmi_status"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"
+                            android:text="-"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/bmiBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="18dp">
+                        <ImageView
+                            android:id="@+id/bmiIndicator"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_triangle" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="8dp"
+                            android:layout_gravity="bottom"
+                            android:orientation="horizontal">
+                            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="#4285F4" />
+                            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="#4CAF50" />
+                            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="#FFC107" />
+                            <View android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:background="#F44336" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <!-- WEIGHT TRACKER -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/bg_white_card"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Pelacak Berat Badan"
+                            android:textColor="#0D7A45"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/txtWeightChange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="#999999"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="8dp" />
+                        <TextView
+                            android:id="@+id/btnTambahBerat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+ Tambah"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:background="@drawable/bg_chip_selected"
+                            android:paddingStart="12dp"
+                            android:paddingEnd="12dp"
+                            android:paddingTop="6dp"
+                            android:paddingBottom="6dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:layout_marginTop="14dp"
+                        android:background="@drawable/bg_tabs"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
+                        <TextView
+                            android:id="@+id/tabWeek"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_selected_tab"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:paddingTop="7dp"
+                            android:paddingBottom="7dp"
+                            android:text="Minggu"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tabMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:paddingTop="7dp"
+                            android:paddingBottom="7dp"
+                            android:text="Bulan"
+                            android:textColor="#0D7A45"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tabSixMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="14dp"
+                            android:paddingEnd="14dp"
+                            android:paddingTop="7dp"
+                            android:paddingBottom="7dp"
+                            android:text="6 Bulan"
+                            android:textColor="#0D7A45"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/weightChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="220dp"
+                        android:layout_marginTop="18dp" />
+
+                </LinearLayout>
+
+                <!-- NUTRITION CHART -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/bg_white_card"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Nutrisi"
+                            android:textColor="#0D7A45"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/txtNutritionStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Belum ada data"
+                            android:textColor="#999999"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:layout_marginTop="12dp"
+                        android:scrollbars="none">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_tabs"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="4dp">
+                            <TextView
+                                android:id="@+id/tabNutriWeek0"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/bg_selected_tab"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp"
+                                android:paddingTop="7dp"
+                                android:paddingBottom="7dp"
+                                android:text="Minggu ini"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/tabNutriWeek1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp"
+                                android:paddingTop="7dp"
+                                android:paddingBottom="7dp"
+                                android:text="mgg lalu"
+                                android:textColor="#0D7A45"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/tabNutriWeek2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp"
+                                android:paddingTop="7dp"
+                                android:paddingBottom="7dp"
+                                android:text="2 mgg lalu"
+                                android:textColor="#0D7A45"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:id="@+id/tabNutriWeek3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="14dp"
+                                android:paddingEnd="14dp"
+                                android:paddingTop="7dp"
+                                android:paddingBottom="7dp"
+                                android:text="3 mgg lalu"
+                                android:textColor="#0D7A45"
+                                android:textSize="12sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:orientation="horizontal">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/txtNutriTotal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#0D7A45"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Kalori"
+                                android:textColor="#8A8A8A"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/txtNutriAvg"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textColor="#0D7A45"
+                                android:textSize="26sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rerata Harian"
+                                android:textColor="#8A8A8A"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/nutritionChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="260dp"
+                        android:layout_marginTop="14dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <!-- BOTTOM APP BAR -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_gravity="bottom"
+        android:backgroundTint="#0D7A45"
+        app:fabCradleMargin="16dp"
+        app:fabCradleRoundedCornerRadius="28dp"
+        app:fabCradleVerticalOffset="16dp"
+        app:hideOnScroll="false"
+        app:elevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- Beranda (kiri) -->
+            <LinearLayout
+                android:id="@+id/navBeranda"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingEnd="52dp"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:id="@+id/navBerandaIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_home"
+                    android:tint="#FFFFFF" />
+            </LinearLayout>
+
+            <!-- Profil (kanan) -->
+            <LinearLayout
+                android:id="@+id/navProfil"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingStart="52dp"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:id="@+id/navProfilIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_profile"
+                    android:tint="#FFFFFF" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <!-- FAB -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"
+        app:tint="@null"
+        app:backgroundTint="#0D7A45"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        app:maxImageSize="32dp"
+        app:layout_anchor="@id/bottomAppBar" />
+
+    <!-- FRAGMENT CONTAINER -->
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

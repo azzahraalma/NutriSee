@@ -1,0 +1,16 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@android:id/progress">
+
+        <shape
+            android:shape="ring"
+            android:thickness="12dp"
+            android:useLevel="false">
+
+            <solid android:color="#4BAA76" />
+
+        </shape>
+
+    </item>
+
+</layer-list>

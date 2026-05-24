@@ -1,0 +1,18 @@
+<resources>
+    <style name="Theme.Nutrisee" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/green_primary</item>
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
+
+        <!-- Ganti android:fontFamily → fontFamily -->
+        <item name="fontFamily">@font/inter</item>
+    </style>
+
+    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:background">@drawable/bg_button_mulai</item>
+        <item name="android:textColor">#1A6B3F</item>
+        <item name="backgroundTint">@null</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="fontFamily">@font/inter</item>
+    </style>
+</resources>

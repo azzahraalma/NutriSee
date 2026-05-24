@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Outline putih paling luar -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" />
+            <corners android:radius="60dp" />
+        </shape>
+    </item>
+
+    <!-- Inner shadow tipis fade -->
+    <item
+        android:left="3dp"
+        android:top="3dp"
+        android:right="3dp"
+        android:bottom="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#1A000000" />
+            <stroke
+                android:width="3dp"
+                android:color="#33000000" />
+            <corners android:radius="56dp" />
+        </shape>
+    </item>
+
+    <!-- White fill utama -->
+    <item
+        android:left="6dp"
+        android:top="6dp"
+        android:right="6dp"
+        android:bottom="6dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" />
+            <corners android:radius="52dp" />
+        </shape>
+    </item>
+
+</layer-list>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A6B3F">
+
+    <ImageView
+        android:id="@+id/ivBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_splash"
+        android:alpha="0.3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/gradientOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_gradient_overlay"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Logo naik ke atas tengah -->
+
+    <!-- Tombol naik dikit -->
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="308dp"
+        android:layout_height="143dp"
+        android:contentDescription="Nutrisee"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo_nutrisee"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
+
+    <Button
+        android:id="@+id/btnMulai"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="116dp"
+        android:background="@drawable/bg_button_mulai"
+        android:letterSpacing="0"
+        android:stateListAnimator="@null"
+        android:text="Mulai"
+        android:textColor="#1A6B3F"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
